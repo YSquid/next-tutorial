@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import styles from './links.module.css'
+import NavLink from './navLink/NavLink'
 
-interface Link {
+interface NavLink {
     title: string,
     path: string,
 }
 
-const links: Link[] = [
+const links: NavLink[] = [
     {
         title: "Homepage",
         path: "/"
@@ -27,8 +28,8 @@ const links: Link[] = [
 ]
 const Links = () => {
   return (
-    <div className={styles.links}>{links.map((link: Link) => {
-        return <Link key={link.title} href={link.path}>{link.title}</Link>
+    <div className={styles.links}>{links.map((link: NavLink) => {
+        return <NavLink item={link} key={link.title} />
     })}
     </div>
   )
